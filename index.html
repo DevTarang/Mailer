@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            margin: auto;
+            background-color: #f0f0f0;
+        }
+        .main-container{
+            background-color: white;
+            margin: auto;
+            width: 600px;
+        }
+        img{
+            width: 100%;
+        }
+        .first-container{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        .first-container-logo{
+            width: 216px;
+            margin: auto;
+            padding-top: 60px;
+            padding-bottom: 45px;
+            display: inline-block;
+        }
+        .text-content{
+            width: 441px;
+            margin: auto;
+            text-align: left;
+        }
+        .bold-text{
+            color: #211756;
+            font-size: 24.31px;
+            font-weight: 700;
+            line-height: 28.48px;
+            font-family: "Roboto", sans-serif;
+        }
+        .normal-text{
+            color: #211756;
+            font-size: 24.31px;
+            font-weight: 400;
+            line-height: 28.48px;
+            font-family: "Roboto", sans-serif;
+        }
+        .lifetime-engagement-container{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .lifetime-graph{
+            margin: auto;
+            margin-top: 20px;
+            width: 477.79px;
+            height: 511.24px;
+            position: relative;
+        }
+        .lifetime-table{
+            width: 445.01px;
+            height: 474.26px;
+            position: absolute;
+            right: 0;
+        }
+        table, th, td {
+            border: 0.84px dashed #CCCCCC;
+            border-collapse: collapse;
+            padding: 0;
+            margin: 0;
+        }
+        tr,td{
+            width: 100px;
+            height: 100px;
+            padding: 0;
+            margin: 0;
+        }
+         .y-axis{
+            position: absolute;
+            left: 0;
+            top: -7px;
+            height: 525px;
+            width: 23.86px;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+         }
+         .y-axis p{
+            padding-bottom: 103px;
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 13.04px;
+            line-height: 15.28px;
+            color: #333333;
+         }
+         .pb-0{
+            padding-bottom: 0;
+         }
+         .pb-20{
+            padding-bottom: 20px;
+         }
+         .x-axis {
+            white-space: nowrap;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 35.64px;
+        }
+        .x-axis-p{
+            display: inline-block;
+            margin: 0;
+            padding: 0 30px;
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-size: 15.06px;
+            line-height: 17.65px;
+            color: #333333;
+        }
+        .p2{
+            padding: 0 37px;
+        }
+        .p3{
+            padding: 0 19px;
+        }
+        .p4{
+            padding: 0 23px;
+        }
+        .bar-container{
+            position: absolute;
+            width: 443.67px;
+            height: 474.26px;
+            padding-left: 32.5px;
+        }
+        .individual-bar{
+            margin: 0;
+            display: inline-block;
+            height: 473.58px;
+            padding: 0 32.5px;
+            vertical-align: bottom;
+            width: 41.84px;
+            position: relative;
+        }
+        .individual-bar p {
+            position: absolute;
+            bottom: 0; 
+            left: 50%;
+            transform: translate(-50%, 0); 
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 13.04px;
+            line-height: 15.28px;
+            color: #333333;
+            z-index: 999;
+        }
+
+        .bar{
+            width: 41.84px;
+            position: absolute;
+            bottom: 0;
+        }
+        .bar-1{
+            background-color: #8F273D;
+        }
+        .bar-2{
+            background-color: #F04167;
+        }
+        .bar-h-1{
+            height: 40%;   
+        }
+        .bar-h-2{
+            height: 88%;   
+        }
+        .bar-h-3{
+            height: 60%;   
+        }
+        .bar-h-4{
+            height: 38%;   
+        }
+        .bar-h-1 + p {
+            bottom: 40%;
+        }
+
+        .bar-h-2 + p {
+            bottom: 88%;
+        }
+
+        .bar-h-3 + p {
+            bottom: 60%;
+        }
+
+        .bar-h-4 + p {
+            bottom: 38%;
+        }
+        .week-engagement-container{
+            margin: auto;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .week-engagement-body{
+            background-image: url("assests/weekEngagementBg.png");
+            height: 407px;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding-top: 65px;
+        }
+        .week-quater{
+            font-family: "Roboto";
+            display: inline;
+            width: 300px;
+            height: 215px;
+            float: left;
+        }
+        .week-quater h1{
+            font-weight: 700;
+            font-size: 57.57px;
+            line-height: 67.46px;
+            text-align: center;
+            color: #48131E;
+            margin: 0;
+            padding: 0;
+        }
+        .week-quater p{
+            font-weight: 400;
+            font-style: italic;
+            font-size: 23.8px;
+            line-height: 28px;
+            text-align: center;
+            color: #48131E;
+            margin: 0;
+            padding: 0;
+        }
+        .week-quater h2{
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 28px;
+            text-align: center;
+            color: #48131E;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .performance-container{
+            background-image: url("assests/performance-bg.png");
+            height: 783px;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: -30px;
+            font-family: "Roboto";
+            position: relative;
+            text-align: center;
+        }
+        .performance-title{
+            padding-top: 55px;
+            width: 333px;
+            height: 58px;
+            margin-bottom: 40px;
+        }
+        .performance-test-accuracy{
+            width: 537px;
+            margin: auto;
+            height: 130px;
+            text-align: center; 
+            font-family: "Roboto", sans-serif;
+            white-space: nowrap;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 2.91px 13.69px 8px 0px #5C002094;
+            position: relative;
+            z-index: 999;
+        }
+        .target{
+            display: inline-block;
+            vertical-align: middle;
+            width: 69px;
+            height: 69px;
+            padding-right: 20px;
+        }
+        .test-accuracy-title{
+            display: inline-block;
+            width: 144px;
+            height: 82px;
+            text-wrap: wrap;
+            vertical-align: middle;
+            text-align: left;
+            font-size: 34.81px;
+            line-height: 40.79px;
+            font-weight: 400;
+            color: #48131E;
+            padding-right: 15px;
+        }
+        .vertical-divider {
+            display: inline-block;
+            vertical-align: middle;
+            height: 74px; 
+            border-left: 1.5px dashed #211756; 
+            margin: 0 15px;
+            padding-right: 15px;
+        }
+        .test-accuracy-value {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+        }
+        .test-accuracy-value .test-p-first,
+        .test-accuracy-value .test-p-second {
+            margin: 0;
+            font-weight: 400;
+            font-size: 25.06px;
+            line-height: 29.37px;
+            color: #48131E;
+        }
+
+        .test-accuracy-value .test-p-second {
+            font-weight: 700;
+            font-size: 48.72px;
+            line-height: 57.1px;
+            color: #8F273D;
+        }
+        .hours-comsumed-top{
+            background-image: url("assests/hours-consumed-bg.png");
+            height: 142px;
+            width: 561px;
+            margin: auto;
+            background-size: cover;
+            margin-top: -30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: "Roboto";
+            text-align: center;
+            position: relative;
+            z-index: 99;
+            font-family: "Roboto";
+            display: inline-block;
+        }
+        .divider{
+            border: 1px dashed #FFFFFF;
+            width: 274px;
+            position: relative;
+            margin: auto;
+            z-index: 100;
+        }
+        .hours-top-left{
+            width: 249px;
+            color: white;
+            text-align: left;
+            padding-top: 50px;
+            padding-left: 65px;
+            float: left;
+        }
+        .hours-top-left p {
+            font-weight: 400;
+            font-size: 27.84px;
+            line-height: 32.63px;
+            margin: 0;
+            padding: 0;
+        }
+        .hours-top-right{
+            width: 150px;
+            color: white;
+            font-weight: 700;
+            font-size: 59.6px;
+            line-height: 69.84px;
+            margin-left: auto;
+            float: right;
+            padding-top: 49px;
+            padding-right: 48px;
+        }
+        .hours-comsumed-bottom{
+            font-family: "Roboto";
+            background-image: url("assests/hours-consumed-bottom-bg.png");
+            height: 48px;
+            width: 441px;
+            margin: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: "Roboto";
+            margin-top: -8px;
+            text-align: center;
+            position: relative;
+            z-index: 99;
+            color: white;
+            font-weight: 400;
+            font-size: 19.7px;
+            line-height: 23.09px;
+
+        }
+        .hours-comsumed-bottom p{
+            margin: 0;
+            padding: 0;
+            padding-top: 10px;
+        }
+        .span-y{
+            font-weight: 700;
+            font-size: 30.7px;
+            line-height: 35.98px;
+        }
+        .span-hrs{
+            font-weight: 400;
+            font-size: 30.7px;
+            line-height: 35.98px;
+        }
+        .span-bracket{
+            font-weight: 400;
+            font-size: 19.7px;
+            line-height: 23.08px;
+        }
+        .recommended-actions{
+            padding-top: 100px;
+            margin-left: -50px;
+        }
+        .trapezium {
+            width: 423px;
+            height: 0;
+            border-bottom: 167px solid #EF4065;
+            border-left: 0 solid transparent;
+            border-right: 150px solid transparent; 
+            margin: 20px auto;
+            margin-top: 90px;
+            margin-left: 0px;
+        }
+        .trapezium div{
+            padding: 30px 0 0 30px;
+        }
+        .trapezium p{
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 47.92px;
+            line-height: 56.15px;
+            font-family: "Roboto";
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="first-container">
+            <img class="top-pattern" src="./assests/TopPattern.png" alt="">
+            <img class="first-container-logo" src="./assests/TopLogo.png" alt="">
+            <div class="text-content">
+                <h1 class="bold-text">Dear [Student's Name],</h1>
+                <p class="normal-text">We hope this email finds you ready to
+                    conquer new challenges!</p>
+                <p class="normal-text">Here’s your personalized progress report,
+                    designed to help you understand your
+                    achievements and areas where you can
+                    soar even higher.</p>
+            </div>
+            <div class="first-container-bottom">
+                <img class="" src="./assests/first-main-img.png" alt="">
+            </div>
+        </div>
+        <div class="lifetime-engagement-container">
+            <h1 class="bold-text pb-20">Lifetime Engagement Overview</h1>
+            <div class="lifetime-graph">
+                <table class="lifetime-table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <!-- <p class="y-100">100</p> -->
+                <div class="y-axis">
+                    <p>100</p>
+                    <p>75</p>
+                    <p>50</p>
+                    <p>25</p>
+                    <p>0</p>
+                </div>
+                <div class="x-axis">
+                    <p class="x-axis-p p1">Colors</p>
+                    <p class="x-axis-p p2">Notes</p>
+                    <p class="x-axis-p p3">Practices</p>
+                    <p class="x-axis-p p4">Test/Quiz</p>
+                </div>
+                <div class="bar-container">
+                    <div class="individual-bar">
+                        <div class="bar bar-1 bar-h-1"></div>
+                        <p>40</p>
+                    </div>
+                    <div class="individual-bar">
+                        <div class="bar bar-2 bar-h-2"></div>
+                        <p>88</p>
+                    </div>
+                    <div class="individual-bar">
+                        <div class="bar bar-1 bar-h-3"></div>
+                        <p>60</p>
+                    </div>
+                    <div class="individual-bar">
+                        <div class="bar bar-2 bar-h-4"></div>
+                        <p>38</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="week-engagement-container">
+            <img src="./assests/weekEngagementTop.png" alt="">
+            <div class="week-engagement-body">
+                <div class="week-quater">
+                    <h1 class="">X%</h1>
+                    <p>of Live Classes</p>
+                    <h2>Watched</h2>
+                </div>
+                <div class="week-quater">
+                    <h1>X%</h1>
+                    <p>of Notes</p>
+                    <h2>Read</h2>
+                </div>
+                <div class="week-quater">
+                    <h1>X%</h1>
+                    <p>No. of Practice</p>
+                    <h2>Attempted</h2>
+                </div>
+                <div class="week-quater">
+                    <h1>X%</h1>
+                    <p>No. of Test</p>
+                    <h2>Attempted</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="performance-container">
+            <img class="performance-title" src="./assests/performance-title.png" alt="">
+            <div class="performance-test-accuracy">
+                <img class="target" src="./assests/target.png" alt="">
+                <h1 class="test-accuracy-title">Test Accuracy</h1>
+                <div class="vertical-divider"></div>
+                <div class="test-accuracy-value">
+                    <div class="test-p-first">You are in</div>
+                    <div class="test-p-second">Top 1%</div>
+                </div>
+            </div>
+            <div class="hours-comsumed-top">
+                <div class="hours-top-left">
+                    <p>Hours Consumed of</p>
+                    <p>Live Classes:</p>
+                </div>
+                <div class="hours-top-right">X hrs</div>
+            </div>
+            <div class="divider"></div>
+            <div class="hours-comsumed-bottom">
+                <p>
+                    <span class="span-bracket">(</span>Topper’s consumed <span class="span-y">Y</span> <span class="span-hrs">hrs</span><span class="span-bracket">)</span>
+                </p>
+            </div>
+            <div class="trapezium">
+                <div>
+                    <p>Recommended</p>
+                    <p>Actions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
