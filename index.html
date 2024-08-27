@@ -65,19 +65,17 @@
             margin-top: 20px;
             width: 477.79px;
             height: 511.24px;
-            position: relative;
-        }
-        .lifetime-table{
-            width: 445.01px;
-            height: 474.26px;
-            position: absolute;
-            right: 0;
         }
         table, th, td {
             border: 0.84px dashed #CCCCCC;
             border-collapse: collapse;
             padding: 0;
             margin: 0;
+        }
+        .lifetime-table{
+            width: 445.01px;
+            height: 474.26px;
+            margin-left: 32px;
         }
         tr,td{
             width: 100px;
@@ -86,14 +84,12 @@
             margin: 0;
         }
          .y-axis{
-            position: absolute;
-            left: 0;
-            top: -7px;
             height: 525px;
             width: 23.86px;
             padding: 0;
             margin: 0;
             text-align: right;
+            margin-top: -482px;
          }
          .y-axis p{
             padding-bottom: 103px;
@@ -113,9 +109,8 @@
          .x-axis {
             white-space: nowrap;
             text-align: center;
-            position: absolute;
-            bottom: 0;
-            left: 35.64px;
+            margin-top: -30px;
+            margin-left: 30px;
         }
         .x-axis-p{
             display: inline-block;
@@ -138,25 +133,28 @@
             padding: 0 23px;
         }
         .bar-container{
-            position: absolute;
+            margin-top: -473.5px;
             width: 443.67px;
             height: 474.26px;
             padding-left: 32.5px;
+            margin-left: -30px;
+            vertical-align: bottom;
         }
         .individual-bar{
             margin: 0;
             display: inline-block;
             height: 473.58px;
             padding: 0 32.5px;
-            vertical-align: bottom;
+            /* vertical-align: bottom; */
             width: 41.84px;
-            position: relative;
+            /* position: relative; */
+            /* vertical-align: bottom; */
         }
         .individual-bar p {
-            position: absolute;
-            bottom: 0; 
-            left: 50%;
-            transform: translate(-50%, 0); 
+            /* position: absolute; */
+            /* bottom: 0;  */
+            /* left: 50%;
+            transform: translate(-50%, 0);  */
             margin: 0;
             font-family: "Roboto", sans-serif;
             font-weight: 400;
@@ -165,12 +163,39 @@
             color: #333333;
             z-index: 999;
         }
-
-        .bar{
+        
+        /* .bar{
             width: 41.84px;
+            align-self: baseline;
+            vertical-align: bottom;
             position: absolute;
             bottom: 0;
+        } */
+        .bars{
+            margin-left: 32px;
         }
+        .bar-set{
+            margin-top: -505px;
+        }
+        .bar-set{
+            border: none;
+        }
+        .bar-set tr{
+            width: 120px;
+            height: 473.5px;
+            vertical-align: bottom;
+            border: 0px;
+        }
+        .bar-set td{
+            border: 0px;
+            width: 110.5px;
+        }
+        .bar-set .bar{
+            width: 41.84px;
+            margin-left: 35px;
+        }
+
+        
         .bar-1{
             background-color: #8F273D;
         }
@@ -700,7 +725,6 @@
                         <td></td>
                     </tr>
                 </table>
-                <!-- <p class="y-100">100</p> -->
                 <div class="y-axis">
                     <p>100</p>
                     <p>75</p>
@@ -714,23 +738,45 @@
                     <p class="x-axis-p p3">Practices</p>
                     <p class="x-axis-p p4">Test/Quiz</p>
                 </div>
-                <div class="bar-container">
+                <!-- <div class="bar-container">
                     <div class="individual-bar">
-                        <div class="bar bar-1 bar-h-1"></div>
                         <p>40</p>
+                        <div class="bar bar-1 bar-h-1"></div>
                     </div>
                     <div class="individual-bar">
-                        <div class="bar bar-2 bar-h-2"></div>
                         <p>88</p>
+                        <div class="bar bar-2 bar-h-2"></div>
                     </div>
                     <div class="individual-bar">
-                        <div class="bar bar-1 bar-h-3"></div>
                         <p>60</p>
+                        <div class="bar bar-1 bar-h-3"></div>
                     </div>
                     <div class="individual-bar">
-                        <div class="bar bar-2 bar-h-4"></div>
                         <p>38</p>
-                    </div>
+                        <div class="bar bar-2 bar-h-4"></div>
+                    </div> -->
+                <!-- </div> -->
+                <div class="bars">
+                    <table class="bar-set">
+                        <tr>
+                            <td>
+                                <span>40</span>
+                                <div class="bar-1 bar bar-h-1"></div>
+                            </td>
+                            <td>
+                                <span>88</span>
+                                <div class="bar-2 bar bar-h-2"></div>
+                            </td>
+                            <td>
+                                <span>60</span>
+                                <div class="bar-1 bar bar-h-3"></div>
+                            </td>
+                            <td>
+                                <span>38</span>
+                                <div class="bar-2 bar bar-h-4"></div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
